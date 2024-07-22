@@ -58,7 +58,7 @@ const generatePassword = () => {
 <style scoped>
 .password-generator-container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .group-input {

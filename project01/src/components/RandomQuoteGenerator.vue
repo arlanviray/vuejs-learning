@@ -63,7 +63,7 @@ onMounted(getRandomQuote)
 <style scoped>
 .quote-generator {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 20px;
   text-align: center;
   border: 1px solid #ccc;
@@ -82,6 +82,7 @@ onMounted(getRandomQuote)
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  margin: 0;
   margin-bottom: 20px;
 }
 

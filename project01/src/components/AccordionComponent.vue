@@ -54,7 +54,7 @@ const toggleAccordion = (index) => {
 <style scoped>
 .accordion-container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .accordion {

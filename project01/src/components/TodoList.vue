@@ -27,7 +27,7 @@ const removeTask = (index) => {
     </div>
 
     <!-- render taks -->
-    <ul class="task-list">
+    <ul class="task-list" v-if="tasks.length">
       <li class="task-item" v-for="(task, index) in tasks" :key="index">
         {{ task }}
         <button class="remove-button" @click="removeTask(index)">Delete</button>
@@ -81,6 +81,7 @@ button:hover {
 .task-list {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .task-item {
@@ -89,6 +90,7 @@ button:hover {
   align-items: center;
   padding: 10px;
   margin: 8px 0;
+  margin-bottom: 0;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 4px;

@@ -1,17 +1,49 @@
 <script setup>
+import { ref } from 'vue'
+
 const props = defineProps(['projectTitle'])
+const steps = ref(['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'])
+const currentStep = ref(0)
+
+const prevStep = () => {
+  if (currentStep.value > 0) {
+    currentStep.value--
+  }
+}
+
+const nextStep = () => {
+  if (currentStep.value < steps.value.length - 1) {
+    currentStep.value++
+  }
+}
 </script>
 
 <template>
   <h1>{{ props.projectTitle }}</h1>
 
-  <div></div>
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div
+        v-for="(step, index) in steps"
+        :key="index"
+        :class="{ 'step-active': index === currentStep }"
+      >
+        {{ step }}
+      </div>
+    </div>
+    <div class="controls">
+      <button @click="prevStep" :disabled="currentStep === 0" class="btn">Previous</button>
+      <button @click="nextStep" :disabled="currentStep === steps.length - 1" class="btn">
+        Next
+      </button>
+    </div>
+  </div>
 </template>
 
 <style scoped>
 .progress-container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .progress-bar {
